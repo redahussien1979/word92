@@ -1,0 +1,4 @@
+[
+    { "code": "US", "name": "United States", "image": "flags/ad.png" },
+    { "code": "UK", "name": "United Kingdom", "image": "flags/us.png" }
+  ]

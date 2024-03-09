@@ -1,0 +1,96 @@
+loginButton.addEventListener('click', function() {
+  const username = usernameInput.value;
+  const password = passwordInput.value;
+  const country = countryInput.value;
+
+
+  fetch('users.json')
+    .then(response => response.json())
+    .then(users => {
+      const user = users.find(user => user.username === username && user.password === password);
+      if (user) {
+        // Store username and password in local storage
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+        localStorage.setItem('country', country);
+        loginContainer.style.display = 'none';
+        registerContainer.style.display = 'none';
+
+        wordleContainer.style.display = 'block';
+        scoreDisplay.style.display='block'
+        flagImage.style.display='block'
+
+        updateScoreDisplay2(user.score,user.username,user.country); // Display the user's score
+
+        startGame(); // Start the game after login
+        displayInputGrid(); // Display input grid and set cursor
+
+        // Additional logic to initialize score in localStorage
+          localStorage.setItem('score', user.score);
+        
+      } else {
+        loginFeedback.textContent = 'Invalid username or password';
+        loginFeedback.style.color = 'red';
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching users:', error);
+      loginFeedback.textContent = 'Error fetching users';
+      loginFeedback.style.color = 'red';
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+// Login logic
+loginButton.addEventListener('click', function() {
+  const username = usernameInput.value;
+  const password = passwordInput.value;
+
+  fetch('users.json')
+    .then(response => response.json())
+    .then(users => {
+      const user = users.find(user => user.username === username && user.password === password);
+      if (user) {
+        // Store username and password in local storage
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+
+        loginContainer.style.display = 'none';
+        wordleContainer.style.display = 'block';
+        startGame(); // Start the game after login
+        displayInputGrid(); // Display input grid and set cursor
+
+        // Additional logic to initialize score in localStorage
+        if (!localStorage.getItem('score')) {
+          localStorage.setItem('score', user.score);
+        }
+      } else {
+        loginFeedback.textContent = 'Invalid username or password';
+        loginFeedback.style.color = 'red';
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching users:', error);
+      loginFeedback.textContent = 'Error fetching users';
+      loginFeedback.style.color = 'red';
+    });
+});
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <title>Wordled - A Wordle based game</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  
+	<meta name="description" content="When one Wordle a day isn't enough, play an unlimited amount of times with Wordled. You have 6 tries to guess the hidden word">
+	<meta name="author" content="ozboware">
+	<meta property="og:title" content="Wordled - A Wordle based game" />
+	<meta property="og:description" content="When one Wordle a day isn't enough, play an unlimited amount of times with Wordled. You have 6 tries to guess the hidden word." />
+	<meta property="og:image" content="https://wordled.online/assets/img/screenshots/game%20board.png" />
+	<meta property="og:locale" content="ar">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://wordled.online">
+	<meta property="og:site_name" content="Wordled - A Wordle based game">
+	
+	
+	
+	<link href="style.css" rel="stylesheet" type="text/css">
+
+
+
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+
+  <style>
+  
+
+
+
+  </style>
+</head>
+<body>
+  <div class="containerx">
+    <div id="scoreDisplay">Score: 0</div> <!-- Element to display score -->
+    <img id="flagImage" src="" alt=""> <!-- Image tag for displaying country flag -->
+  </div>
+  <button class="logout-button" style="display: none;">خـــروج</button>
+
+<div class="login-container">
+    <h2 class="login-title">Login</h2>
+      <div class="form-group">
+        <label for="username" class="form-label"></label>
+        <input type="text" id="username" name="username" class="username-input" placeholder="Enter your username" required>
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label"></label>
+        <input type="password" id="password" name="password" class="password-input" placeholder="Enter your password" required>
+      </div>
+      <div class="checkbox-group">
+        <label for="remember-me">
+          <input type="checkbox" id="remember-me" name="remember-me">
+          Remember me
+        </label>
+      </div>
+      <button type="submit" class="login-button">Login</button>
+    <div class="feedback"></div>
+    <a href="#">Forgot Password?</a>
+  </div>
+  
+  <div id="container" class="container" style="display: none;">
+    </div>
+  <div class="result">
+    </div>
+  
+
+    <div id="containerscore" class="containerscore" style="display: none;">
+    <audio id="gameCompleteSound" src="path_to_your_sound_file.mp3"></audio>
+    <h1 style="display: flex; justify-content: center;"><img src="https://www.freepnglogos.com/uploads/trophy-png/trophy-winner-logo-png-24.png" alt="Trophy" style="width: 80px; height: 80px;"></h1>
+    <ul id="topScorersList">
+  <li>
+    <span class="player-name">Alice</span>
+    <span class="player-score">1000</span>
+    <img class="player-flag" src="path/to/flag_US.png" alt="United States Flag">
+  </li>
+  </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<div class="registration-container">
+        <h2 class="register-title">Register</h2>
+        <input type="text" class="new-username-input input-field" placeholder="Username" />
+        <input type="password" class="new-password-input input-field" placeholder="Password" />
+
+        <div class="mm-dropdown">
+            <div class="textfirst">اختر بلدك <img src="https://cdn4.iconfinder.com/data/icons/essentials-72/24/022_-_Arrow-1024.png" width="25" height="25" class="down" /></div>
+            <ul class="country-list">
+              <li class="input-option" data-value="tn_ag-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_ag-flag.gif" alt="Algeria" width="30" height="20" /> الجزائر
+              </li>
+              
+            
+              <li class="input-option" data-value="tn_ba-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_ba-flag.gif" alt="" width="30" height="20" /> البحرين
+              </li>
+             
+              
+              
+             
+            
+              <li class="input-option" data-value="tn_dj-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_dj-flag.gif" alt="" width="30" height="20" /> جيبوتي
+              </li>
+
+
+
+
+          
+              <li class="input-option" data-value="tn_eg-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_eg-flag.gif" alt="" width="30" height="20" /> مصر
+              </li>
+              
+              
+              
+              
+              
+              <li class="input-option" data-value="tn_iz-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_iz-flag.gif" alt="" width="30" height="20" /> العراق
+              </li>
+              
+              <li class="input-option" data-value="tn_jo-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_jo-flag.gif" alt="" width="30" height="20" /> الأردن
+              </li>
+              
+              <li class="input-option" data-value="tn_ku-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_ku-flag.gif" alt="" width="30" height="20" /> الكويت
+              </li>
+             
+              <li class="input-option" data-value="tn_le-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_le-flag.gif" alt="" width="30" height="20" /> لبنان
+              </li>
+            
+              <li class="input-option" data-value="tn_ly-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_ly-flag.gif" alt="" width="30" height="20" /> ليبيا
+              </li>
+             
+           
+              <li class="input-option" data-value="tn_mr-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_mr-flag.gif" alt="" width="30" height="20" /> موريتانيا
+              </li>
+             
+             
+              <li class="input-option" data-value="tn_mo-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_mo-flag.gif" alt="" width="30" height="20" /> المغرب
+              </li>
+              
+              
+              <li class="input-option" data-value="tn_mu-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_mu-flag.gif" alt="" width="30" height="20" /> عمان
+              </li>
+              
+              <li class="input-option" data-value="tn_palestine-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_palestine-flag.gif" alt="" width="30" height="20" /> فلسطين
+              </li>
+              
+             
+              <li class="input-option" data-value="tn_qa-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_qa-flag.gif" alt="" width="30" height="20" /> قطر
+              </li>
+              
+           
+              <li class="input-option" data-value="tn_sa-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_sa-flag.gif" alt="" width="30" height="20" /> السعودية
+              </li>
+             
+              <li class="input-option" data-value="tn_so-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_so-flag.gif" alt="" width="30" height="20" /> الصومال
+              </li>
+              
+              <li class="input-option" data-value="tn_su-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_su-flag.gif" alt="" width="30" height="20" /> السودان
+              </li>
+              
+              <li class="input-option" data-value="tn_sy-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_sy-flag.gif" alt="" width="30" height="20" /> سورية
+              </li>
+             
+              <li class="input-option" data-value="tn_ts-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_ts-flag.gif" alt="" width="30" height="20" /> تونس
+              </li>
+              
+              <li class="input-option" data-value="tn_ae-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_ae-flag.gif" alt="" width="30" height="20" /> الإمارات العربيّة المتّحدة
+              </li>
+              
+              <li class="input-option" data-value="tn_ym-flag">
+                <img src="https://www.worldometers.info//img/flags/small/tn_ym-flag.gif" alt="" width="30" height="20" /> اليمن
+              </li>
+             
+            </ul>
+            <input type="hidden" class="option" name="namesubmit" value="" />
+        </div>
+        <br>
+        <button class="register-button button">Register</button>
+        <div class="feedback"></div>
+    </div>
+
+
+<script src="script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script>
+$(function() {
+  var main = $('div.mm-dropdown .textfirst');
+  var li = $('div.mm-dropdown > ul > li.input-option');
+  var inputoption = $("div.mm-dropdown .option");
+  var default_text = '<span class="text-decoration">  اختر بلدك :</span><img src="https://cdn4.iconfinder.com/data/icons/essentials-72/24/022_-_Arrow-1024.png" width="25" height="25" class="down" />';
+
+  main.click(function() {
+    main.html(default_text);
+    li.toggle('fast');
+    $('.register-button').toggle(); // Toggle the visibility of the button
+  });
+
+  li.click(function() {
+    var livalue = $(this).data('value');
+    var selectedCountry = inputoption.val();
+    if (livalue === selectedCountry) {
+      main.html(default_text);
+      inputoption.val(""); // Clear the hidden input value
+    } else {
+      var lihtml = $(this).html();
+      main.html(lihtml);
+      inputoption.val(livalue);
+    }
+    li.toggle('fast');
+    $('.register-button').toggle(); // Toggle the visibility of the button
+  });
+});
+  
+</script>
+
+</body>
+</html>

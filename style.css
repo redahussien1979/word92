@@ -1,0 +1,513 @@
+.input-box {
+  box-sizing: border-box;  /* Ensure padding/border doesn't affect width */
+
+  width: fit-content;  /* Adjust width based on content */
+  width: 30px;  /* Set a maximum width for large screens */
+  margin: 0 auto;  /* Center the input box horizontally */
+  font-size: 1.2em;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+html, body {
+  /* Remove fixed width */
+  width: 100%;  /* Allow elements to fill viewport width */
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Amiri', serif;
+}
+
+
+/* Styles for larger screens (laptops and desktops) */
+@media only screen and (min-width: 768px) {
+html, body {
+  /* Remove fixed width */
+  width: 50%;  /* Allow elements to fill viewport width */
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Amiri', serif;
+}
+  .container {  /* Assuming you have a container element */
+    max-width: 800px;  /* Set a maximum width for the container */
+    margin: 0 auto;  /* Center the container horizontally */
+  }
+
+  .input-box {  /* Assuming you have input boxes */
+    width: 30px;  /* Set a fixed width for input boxes */
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1300px) {
+  html, body {
+    /* Remove fixed width */
+    width: 80%;  /* Allow elements to fill viewport width */
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Amiri', serif;
+  }
+    .container {  /* Assuming you have a container element */
+      max-width: 800px;  /* Set a maximum width for the container */
+      margin: 0 auto;  /* Center the container horizontally */
+    }
+  
+    .input-box {  /* Assuming you have input boxes */
+      width: 20px;  /* Set a fixed width for input boxes */
+    }
+  
+  }
+/* Styles for all screens (including small screens) */
+
+.container {  /* Assuming you have a container element */
+  width: 100%;  /* Allow container to fill available width on small screens */
+  margin: 0 auto;  /* Center the container horizontally */
+}
+#container {
+    font-family: 'Amiri', serif;
+
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-radius: 18px;
+  margin-top: 35px;
+  border-color: #35a535;
+  border-style: ridge;
+  margin-bottom: 35px;
+  background: linear-gradient(to bottom, #0896e3c5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #0896e3c5); /* Adjust colors as needed */
+}
+#containerscore {
+  font-family: 'Amiri', serif;
+
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+border-left: 1px solid;
+border-right: 1px solid;
+border-radius: 18px;
+margin-top: 35px;
+border-color: #35a535;
+border-style: ridge;
+margin-bottom: 35px;
+background: linear-gradient(to bottom, #0896e3c5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5, #b7dbebc5); /* Adjust colors as needed */
+}
+
+.logo {
+  text-align: center;
+  margin-top: 12px;
+  cursor: pointer;
+  text-shadow: 2px 3px 2px #000;
+  transition: .5s;
+}
+
+.logo:hover {
+  filter: brightness(1.125);
+}
+
+.logo_green,
+.logo_gold {
+  font-size: 1.2rem;  /* Use rem unit for font size */
+  color: #fff;
+  width: 3%;  /* Adjust width for smaller screens */
+  height: 35px;
+  border-radius: 12px;
+  margin: 3px;
+  display: inline-block;
+  font-family: 'Amiri', serif;
+}
+
+.logo_gold {
+  background-color: #d7bf4a;
+  width: 40px;
+}
+
+.logo_green {
+  background-color: #35a535;
+  width: 40px;
+
+}
+
+.nav_bar {
+  text-align: center;
+  height: 33px;
+  margin-top: 11px;
+}
+
+#giveUpBtn {
+  padding: 5px 10px;
+  font-size: 17px;
+  cursor: pointer;
+  font-family: 'Amiri', serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.game_area {
+  margin-top: 5px;
+}
+
+.row,
+.row_block {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  margin-bottom: 10px;
+  align-items: center;
+  line-height: 3.2;
+  text-align: center;
+
+}
+
+.row_block {
+  font-size: 35px;
+  border: 1px solid;
+  width: 56px;
+  height: 53px;
+  border-radius: 12px;
+  line-height: 3.2;
+  text-align: center;
+  margin-bottom: -30px;
+  margin-top: 30px;
+}
+
+#notification {
+  font-family: 'Amiri', serif;
+  text-align: center;
+  letter-spacing: 1px;
+  font-size: 22px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+  height: 25px;
+}
+
+#keyboard {
+  text-align: center;
+  margin-top: 5px;
+}
+
+#topKeys,
+#midKeys,
+#botKeys {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.keyboardKey_s,
+.keyboardKey_m,
+.keyboardKey_l {
+  background-color: #c5c5c5;
+  font-size: 30px;
+  height: 35px;
+  padding: 8px 0;
+  margin: 1.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: 'Amiri', serif;
+  border-radius: 10px;
+  width: calc(33% - 3px);  /* Adjust width based on screen size */
+
+}
+
+.keyboardKey_s {
+  width: 55px;
+}
+
+.keyboardKey_m {
+  width: 58px;
+}
+
+.keyboardKey_l {
+  width: 81px;
+}
+
+.blockGreen {
+  background-color: #35a535;
+  color: #fff;
+}
+
+.blockGrey {
+  background-color: #737373;
+  color: #fff;
+}
+
+.blockGold {
+  background-color: #d7bf4a;
+  color: #fff;
+}
+.login-container, .registration-container {
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 10px auto;
+  width: auto;
+  background-color: #fff;
+  text-align: center;
+    margin-top: 50px;
+}
+
+
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+
+
+.username-input, .password-input, .new-username-input, .new-password-input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.country-select {
+  width: auto;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.login-button, .register-button {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.logout-button {
+  display: block;
+  width: 100%;
+  padding: 10px 10px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: large;
+  border: none;
+  margin-top: 10px;
+  border-radius: 13px;
+  cursor: pointer;
+}
+.login-button:hover, .register-button:hover {
+  background-color: #2980b9;
+}
+.country-list {
+list-style-type: none;
+padding: 0;
+margin: 0;
+border: 1px solid #ccc;
+border-radius: 4px;
+width: auto; /* Adjust width as needed */
+overflow-y: auto;
+/* Add these styles to align right */
+text-align: right;
+/* Optionally, you can add margin or padding-right for further adjustment */
+}
+
+.country-list li {
+display: block;
+padding: 5px;
+cursor: pointer;
+
+
+}
+
+.country-list li:hover {
+background-color: #c1e555;
+
+
+}
+
+div.mm-dropdown {
+border: 5px solid #ddd;
+width: auto;
+border-radius: 3px;
+height: 50px;
+}
+
+div.mm-dropdown ul {
+list-style: none;
+padding: 0;
+margin: 0;
+border: 10;
+}
+
+div.mm-dropdown ul li,
+div.mm-dropdown div.textfirst {
+padding: 0;
+color: #cb0e0e;
+border-bottom: 1px solid #ddd;
+padding: 15px 15px;
+text-align: right;
+margin-right: 10px; /* Example space between text and image */
+font-size: 20px;
+
+
+
+}
+
+div.mm-dropdown div.textfirst img.down {
+float: right;
+margin-top: 5px;
+margin-right: 10px; /* Example space between text and image */
+font-weight: bold;
+padding-left: 15px;
+}
+
+div.mm-dropdown ul li:last-child {
+border-bottom: 0;
+background-color: white; /* Change to the desired background color */
+
+
+}
+
+div.mm-dropdown ul li {
+display: none;
+padding-left: 20px;
+z-index: 1; /* Set a higher z-index for the dropdown */
+
+
+}
+
+div.mm-dropdown ul li.main {
+display: block;
+}
+
+div.mm-dropdown ul li img {
+width: 40px;
+height: 30px;
+}
+
+
+ 
+  .login-input {
+    margin-bottom: 20px;
+  }
+ 
+  .feedback {
+    margin-top: 20px;
+    font-weight: bold;
+  }
+ 
+  .containerscore {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+ 
+  .input-field {
+    margin-bottom: 20px;
+  }
+  
+
+#scoreDisplay {
+          display: inline-block; /* Set score display to inline block */
+          margin-right: 20px; /* Add some margin to separate score and image */
+          margin-left: 20px; /* Add some margin to separate score and image */
+
+      }
+
+      #flagImage{
+          width: 50px; /* Set the width of the image */
+          height: 35px; /* Maintain aspect ratio */
+          display: inline-block; /* Set image to inline block */
+          border-radius: 10px; /* Apply rounded corners */
+          
+          border: 1px solid gold; /* Adjust border style, width, and color as desired */
+          box-shadow: 0 0 5px gold; /* Adds a subtle inner glow (adjust intensity with spread) */
+          animation: wave 3s ease-in-out infinite;
+          transform-origin: bottom;
+      }
+      @keyframes wave {
+0% { transform: translateX(0px); }
+50% { transform: translateX(5px); }
+100% { transform: translateX(0px); }
+}
+      .containerx {
+          display: flex; /* Use flexbox for layout */
+          align-items: center; /* Center items vertically */
+      }
+.result {
+  margin-top: 20px;
+}
+
+.text-decoration {
+padding: 0;
+color: #cb0e0e;
+border-bottom: 1px solid #ddd;
+padding: 15px 15px;
+text-align: right;
+margin-right: 10px; /* Example space between text and image */
+font-size: 25px;
+
+}
+
+
+
+
+
+
+/* CSS for the list of top scorers */
+/* CSS for the list of top scorers */
+#topScorersList {
+list-style-type: none;
+padding: 0;
+}
+
+#topScorersList li {
+margin-bottom: 10px;
+padding: 10px;
+border-radius: 15px;
+background-color: #f5f5f5;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+display: grid;
+grid-template-columns: 2fr 1fr auto; /* Three columns: 2fr for name, 1fr for score, auto for flags */
+align-items: center;
+column-gap: 20px; /* Add some space between columns */
+}
+
+
+#topScorersList li img {
+width: 55px; /* Set the width of the image */
+height: 40px; /* Maintain aspect ratio */
+display: inline-block; /* Set image to inline block */
+border-radius: 10px; /* Apply rounded corners */
+border: 1px solid gold; /* Adjust border style, width, and color as desired */
+box-shadow: 0 0 5px gold; /* Adds a subtle inner glow (adjust intensity with spread) */
+animation: wave 3s ease-in-out infinite;
+transform-origin: bottom;
+}
+
+@keyframes wave {
+0% { transform: translateX(0px); }
+50% { transform: translateX(5px); }
+100% { transform: translateX(0px); }
+}
+/* Styles for smaller screens */
+@media only screen and (max-width: 768px) {
+  .input-box {
+    width: 33%;  /* Adjust width for smaller screens */
+  }
+
+  .nav_bar {
+    height: auto;  /* Adjust height for smaller screens */
+  }
+
+  #notification {
+    font-size: 1.5rem;  /* Adjust font size for smaller screens */
+  }
+}
+
+.rubik-distressed-regular {
+  font-family: "Rubik Distressed", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
